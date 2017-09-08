@@ -192,8 +192,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Domain\CardioWorkout.cs" />
     <Compile Include="Domain\Enums\Gender.cs" />
+    <Compile Include="Domain\GymWorkout.cs" />
     <Compile Include="Domain\UserProfile.cs" />
+    <Compile Include="Domain\WeightLog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
