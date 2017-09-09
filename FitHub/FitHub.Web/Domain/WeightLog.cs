@@ -8,7 +8,10 @@ namespace FitHub.Web.Domain
     public class WeightLog
     {
         public int Id { get; set; }
+
         public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
+
         public double Weight { get; set; }
         public DateTime Date { get; set; }
     }

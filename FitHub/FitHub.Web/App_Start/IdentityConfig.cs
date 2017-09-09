@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using FitHub.Web.Models;
+using FitHub.Web.Domain;
 
 namespace FitHub.Web
 {
