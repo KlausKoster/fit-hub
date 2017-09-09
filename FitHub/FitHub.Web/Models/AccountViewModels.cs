@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using FitHub.Web.Domain;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+
 
 namespace FitHub.Web.Models
 {
@@ -68,6 +70,11 @@ namespace FitHub.Web.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+
+        public string Height { get; set; }
+        public Gender Gender { get; set; }
+        public int Age { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
