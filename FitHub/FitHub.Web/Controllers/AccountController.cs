@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FitHub.Web.Models;
+using FitHub.Web.Domain;
 
 namespace FitHub.Web.Controllers
 {
@@ -155,6 +156,21 @@ namespace FitHub.Web.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    UserProfile profile = new UserProfile
+                    {
+                        Age = model.Age,
+                        Gender = model.Gender,
+                        Height = Convert.ToInt32(model.Height),
+                        UserId = user.Id
+                    };
+
+                    using (var db = new ApplicationDbContext())
+                    {
+                        db.UserProfiles.Add(profile);
+                        db.SaveChanges();
+                    }
+                    
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
